@@ -5,11 +5,10 @@ public class Estudante{
     private float nota2;
     private float nota3;
 
-    public Estudante(int numero, String nome){
+    public Estudante(int nUSP, String nome){
         this.nome = nome;
-        this.nUSP = numero;
+        this.nUSP = nUSP;
     }
-
 
     public void setNota1(float nota){
         this.nota1 = nota;
