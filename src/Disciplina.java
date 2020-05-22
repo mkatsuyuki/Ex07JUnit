@@ -181,10 +181,9 @@ public class Disciplina {
         }
     }
     public boolean verificaCodigoDisciplina(){
-        
         if(codigoDisciplina.length() == 7){
                 String tresPrimeirosCaracteres = codigoDisciplina.substring(0, 3);
-                if(tresPrimeirosCaracteres == "SSC"){
+                if(tresPrimeirosCaracteres.equals("SSC")){
                     return true;
                 }else{
                     return false;
