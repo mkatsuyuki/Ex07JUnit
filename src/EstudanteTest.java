@@ -1,5 +1,7 @@
 import org.junit.Test;
 
+import jdk.jshell.VarSnippet;
+
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
@@ -11,40 +13,69 @@ public class EstudanteTest{
     Estudante estudante;           //Classe desejada para ser testada
     boolean validaSaida = true;
     boolean invalidaSaida = true;
-    boolean resultado_aux;
+    boolean resultado_bool;
+    float resultado_float;
+    int numero;
 
     //Metodo que é sempre executado antes de executar cada teste
     @Before
     public void init(){
-        estudante = new Estudante(10277040, "Paulo");
-        resultado_aux = false;
+        numero = 10277040;
+        estudante = new Estudante(numero, "Paulo");
+
     }
 
-    /* Implementação do caso de teste < a52589, ID válido > [limite inferior] */
+    // Teste se retorna o nUSP correto
     @Test
     public void casoTeste1 (){
-        resultado_aux = estudante.validacaoID("a52589");
-        assertEquals(validaSaida, resultado_aux);
+        resultado_float = estudante.getNumero();
+        assertEquals(numero, resultado_float, 0);
     }
 
-    /** Implementação do caso de teste <b74ad58es24e, ID válido> [limite superior] */
+    // Teste se a Nota1 está entre 0 e 10
     @Test
     public void casoTeste2 (){
-        resultado_aux = estudante.validacaoID("b74ad58es24e");
-        assertEquals(validaSaida, resultado_aux);
+        float nota = estudante.getNota1();
+        boolean teste;
+
+        if(nota <= 10 & nota >= 0) teste = true;   
+        else teste = false;
+
+        assertEquals(teste, true);
     }
 
-    /** Implementação do caso de teste <b74ad&58es24e, ID inválido> [seguinte do limite superior] */
+    // Teste se a Nota2 está entre 0 e 10
     @Test
     public void casoTeste3 (){
-        resultado_aux = estudante.validacaoID("b74ad&58es24e");
-        assertEquals(invalidaSaida, resultado_aux);
+        float nota = estudante.getNota2();
+        boolean teste;
+
+        if(nota <= 10 & nota >= 0) teste = true;   
+        else teste = false;
+
+        assertEquals(teste, true);
     }
 
-    /** Implementação do caso de teste < B*ss2, ID inválido > [anterior do limite inferior] */
+    // Teste se a Nota3 está entre 0 e 10
     @Test
     public void casoTeste4 (){
-        resultado_aux = estudante.validacaoID("B*ss2");
-        assertEquals(invalidaSaida, resultado_aux);
+        float nota = estudante.getNota3();
+        boolean teste;
+
+        if(nota <= 10 & nota >= 0) teste = true;   
+        else teste = false;
+
+        assertEquals(teste, true);
+    }
+
+    // Teste se o nUSP tem no maximo 7 digitos
+    @Test
+    public void casoTeste5 (){
+        boolean teste;
+        int numero = estudante.getNumero();
+
+        if(numero > 9999999) teste = true;
+        else teste = false;
+        assertEquals(teste, true);
     }
 }
