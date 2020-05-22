@@ -2,7 +2,6 @@ public class Main {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
 
-        /*
         Disciplina orgcomp = new Disciplina("SSC0001", "OrgComp");
 
         Estudante aluno1 = new Estudante(10101010, "Aluno 1");
@@ -13,6 +12,5 @@ public class Main {
         orgcomp.addEstudantes(Arrays.asList(alunos));
 
         orgcomp.printAlunos();
-        */
     }
 }

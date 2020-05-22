@@ -1,6 +1,6 @@
 import org.junit.Test;
 
-//import jdk.jshell.VarSnippet;
+import jdk.jshell.VarSnippet;
 
 import static org.junit.Assert.assertEquals;
 
@@ -12,7 +12,7 @@ public class EstudanteTest{
     //variáveis globais da classe de teste
     Estudante estudante;           //Classe desejada para ser testada
     boolean validaSaida = true;
-    boolean invalidaSaida = false;
+    boolean invalidaSaida = true;
     boolean resultado_bool;
     float resultado_float;
     int numero;
