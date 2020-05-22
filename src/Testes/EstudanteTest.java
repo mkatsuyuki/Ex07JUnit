@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 
-//Classe que implementa os casos de testes de objetos específicos Ex: Aluno
+//Classe que implementa os casos de testes de objetos específicos Ex: Estudante
 
 public class TestesJUnit_Template {
     /*
@@ -17,7 +17,7 @@ public class TestesJUnit_Template {
     //Metodo que é sempre executado antes de executar cada teste
     @Before
     public void init(){
-        identifier = new IdentifierExemplo();
+        identifier = new Estudante();
         resultado_aux = "";
     }
 
