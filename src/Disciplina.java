@@ -180,4 +180,17 @@ public class Disciplina {
             System.out.println(a.getNome() + ", " + a.getNumero() + ", Média: " + a.getMedia());
         }
     }
+    public boolean verificaCodigoDisciplina(){
+        
+        if(codigoDisciplina.length() == 7){
+                String tresPrimeirosCaracteres = codigoDisciplina.substring(0, 3);
+                if(tresPrimeirosCaracteres == "SSC"){
+                    return true;
+                }else{
+                    return false;
+                }
+        }else{
+            return false;
+        }
+    }
 }

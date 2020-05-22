@@ -25,7 +25,6 @@ public class MainTest{
     /* Implementação do caso de teste < a52589, ID válido > [limite inferior] */
     @Test
     public void casoTeste1 (){
-        resultado_aux = main.metodo_1("a52589");
         assertEquals(validaSaida, resultado_aux);
     }
 }

@@ -1,3 +1,5 @@
+import sun.security.util.Length;
+
 public class Estudante{
     private String nome;
     private int nUSP;

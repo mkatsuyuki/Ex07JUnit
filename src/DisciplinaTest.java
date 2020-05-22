@@ -24,14 +24,36 @@ public class DisciplinaTest{
     //Metodo que é sempre executado antes de executar cada teste
     @Before
     public void init(){
-        disciplina = new Disciplina("nomeDisciplina", "codigoDisciplina");
         resultado_aux = true;
     }
 
     /* Implementação do caso de teste < a52589, ID válido > [limite inferior] */
     @Test
-    public void verificaCodigoDisciplina01(){
-        resultado_aux = disciplina.validacaoID("a52589");
+    public void casoTeste01(){
+        nomeDisciplina = "Teste01";
+        codigoDisciplina = "SSC123456789";
+        disciplina = new Disciplina(nomeDisciplina, codigoDisciplina);
+        resultado_aux = disciplina.verificaCodigoDisciplina();
         assertEquals(validaSaida, resultado_aux);
+    }
+    
+    /* Implementação do caso de teste < a52589, ID válido > [limite inferior] */
+    @Test
+    public void casoTeste02(){
+        nomeDisciplina = "Teste02";
+        codigoDisciplina = "ABC4567";
+        disciplina = new Disciplina(nomeDisciplina, codigoDisciplina);
+        resultado_aux = disciplina.verificaCodigoDisciplina();
+        assertEquals(validaSaida, resultado_aux);
+    }      
+    
+    /* Implementação do caso de teste < a52589, ID válido > [limite inferior] */
+    @Test
+    public void casoTeste03(){
+        nomeDisciplina = "Teste03";
+        codigoDisciplina = "SSC0620";
+        disciplina = new Disciplina(nomeDisciplina, codigoDisciplina);
+        resultado_aux = disciplina.verificaCodigoDisciplina();
+        assertEquals(validaSaida,resultado_aux);
     }
 }
