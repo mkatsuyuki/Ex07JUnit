@@ -26,7 +26,6 @@ public class Disciplina {
     }
 
     public boolean setNota1Estudante(int num, float nota){
-
         for (Estudante a: this.listaEstudantes) {
             if(a.getNumero() == num) {
                 a.setNota1(nota);
@@ -36,7 +35,7 @@ public class Disciplina {
         return false;
     }
 
-    public boolean setNota2Aluno(int num, float nota){
+    public boolean setNota2Estudante(int num, float nota){
         for (Estudante a: this.listaEstudantes) {
             if(a.getNumero() == num) {
                 a.setNota2(nota);
@@ -46,7 +45,7 @@ public class Disciplina {
         return false;
     }
 
-    public boolean setNota3Aluno(int num, float nota){
+    public boolean setNota3Estudante(int num, float nota){
         for (Estudante a: this.listaEstudantes) {
             if(a.getNumero() == num) {
                 a.setNota3(nota);
@@ -69,7 +68,7 @@ public class Disciplina {
         }
     }
 
-    public int quantidadeAlunos(){
+    public int quantidadeEstudantes(){
         return this.listaEstudantes.size();
     }
 
@@ -81,7 +80,7 @@ public class Disciplina {
         return this.listaReprovados.size();
     }
 
-    public float getNota1Aluno(int num){
+    public float getNota1Estudante(int num){
         float n = -1;
         for (Estudante a: this.listaEstudantes) {
             if(a.getNumero() == num) {
@@ -93,7 +92,7 @@ public class Disciplina {
     }
 
 
-    public float getNota2Aluno(int num){
+    public float getNota2Estudante(int num){
         float n = -1;
         for (Estudante a: this.listaEstudantes) {
             if(a.getNumero() == num) {
@@ -103,7 +102,7 @@ public class Disciplina {
         return n;
     }
 
-    public float getNota3Aluno(int num){
+    public float getNota3Estudante(int num){
         float n = -1;
         for (Estudante a: this.listaEstudantes) {
             if(a.getNumero() == num) {
@@ -113,7 +112,7 @@ public class Disciplina {
         return n;
     }
 
-    public float getMediaAluno(int num){
+    public float getMediaEstudante(int num){
         float n = -1;
         for (Estudante a: this.listaEstudantes) {
             if(a.getNumero() == num) {
@@ -123,7 +122,7 @@ public class Disciplina {
         return n;
     }
 
-    public void printAlunos(){
+    public void printEstudantes(){
         //ordenar lista de alunos por nusp decrescente
         Collections.sort(this.listaEstudantes, new Comparator(){
             public int compare(Object o1, Object o2) {
@@ -168,7 +167,7 @@ public class Disciplina {
         }
     }
 
-    public void printAlunosMedia(){
+    public void printEstudantessMedia(){
         //ordenar lista de alunos por media decrescente
         Collections.sort(this.listaEstudantes, new Comparator() {
             public int compare(Object o1, Object o2) {
