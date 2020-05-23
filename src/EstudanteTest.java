@@ -22,6 +22,9 @@ public class EstudanteTest{
     public void init(){
         numero = 10277040;
         estudante = new Estudante(numero, "Paulo");
+        estudante.setNota1(1.0f);
+        estudante.setNota2(-1.0f);
+        estudante.setNota3(11.0f);
 
     }
 
