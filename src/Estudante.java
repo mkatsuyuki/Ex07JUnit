@@ -10,7 +10,7 @@ public class Estudante{
     public Estudante(int nUSP, String nome){
 
         if(nUSP > 9999999){
-            throw new IllegalArgumentException("nUSP deve ter no maximo 7 digitos, porem foi encontrado: "+ nUSP);
+            //throw new IllegalArgumentException("nUSP deve ter no maximo 7 digitos, porem foi encontrado: "+ nUSP);
         }
         this.nome = nome;
         this.nUSP = nUSP;
@@ -45,7 +45,7 @@ public class Estudante{
     }
 
     public int getNumero(){
-        return nUSP;
+        return this.nUSP;
     }
 
     public float getMedia(){
