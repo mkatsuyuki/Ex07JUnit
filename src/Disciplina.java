@@ -1,6 +1,7 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.List;
 
 public class Disciplina {
 
@@ -14,11 +15,16 @@ public class Disciplina {
     public Disciplina(String nomeDisciplina, String codigoDisciplina){
         this.nomeDisciplina = nomeDisciplina;
         this.codigoDisciplina = codigoDisciplina;
+        this.listaEstudantes = new ArrayList<Estudante>();
+        this.listaAprovados = new ArrayList<Estudante>();
+        this.listaReprovados = new ArrayList<Estudante>();
     }
 
+    /*
     public void addEstudantes(List<Estudante> listaEstudantes){
         this.listaEstudantes.addAll(listaEstudantes);
     }
+    */
 
     public void addEstudante(Estudante newEstudante){
         this.listaEstudantes.add(newEstudante);
@@ -130,7 +136,6 @@ public class Disciplina {
                 return a1.getNumero() < a2.getNumero() ? +1 : (a1.getNumero() > a2.getNumero() ? -1 : 0);
             }
         });
-
         for (Estudante a: this.listaEstudantes) {
             System.out.println(a.getNome() + ", " + a.getNumero());
         }
