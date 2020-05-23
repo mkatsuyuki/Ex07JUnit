@@ -28,7 +28,6 @@ public class EstudanteTest{
         estudanteNUSP_03 = new Estudante(1234, "Teste03"); 
         estudante1 = new Estudante(10277040, "Paulo");
         estudanteNOTAS = new Estudante(1000001, "Miguel");
-
     }
 
     // Teste formatação nUSP
