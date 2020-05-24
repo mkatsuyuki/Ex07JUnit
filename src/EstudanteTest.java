@@ -22,10 +22,10 @@ public class EstudanteTest{
     public void init(){
         resultado_float = 0;
         resultado_int = 0;
-        estudanteNUSP_01 = new Estudante(10277040, "Teste01");          
-        estudanteNUSP_02 = new Estudante(123456789, "Teste02");          
-        estudanteNUSP_03 = new Estudante(1234, "Teste03"); 
-        estudanteNOTAS = new Estudante(1000001, "Miguel");
+        estudanteNUSP_01 = Estudante.newEstudante(10277040, "Teste01");          
+        estudanteNUSP_02 = Estudante.newEstudante(123456789, "Teste02");          
+        estudanteNUSP_03 = Estudante.newEstudante(1234, "Teste03"); 
+        estudanteNOTAS = Estudante.newEstudante(1000001, "Miguel");
     }
 
     // Teste formatação nUSP

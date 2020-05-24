@@ -13,14 +13,15 @@ public class Estudante{
     }
 
     public static Estudante newEstudante(int nUSP, String nome) /* throws SomeException -- if you want */ {
-        if (nUSP > 99999999) {
-           return null; // or throw an Exception - it is how you want   
+        if (nUSP > 9999999) {
+            System.out.println("nUSP invalido: " + nUSP);
+            return null; // or throw an Exception - it is how you want   
         }
         return new Estudante(nUSP, nome);
     }
 
     public boolean setNota1(float nota){
-        if(nota > 0 & nota < 10){
+        if(nota >= 0 & nota <= 10){
             this.nota1 = nota;
             return true;
         }
@@ -30,7 +31,7 @@ public class Estudante{
     }
 
     public boolean setNota2(float nota){
-        if(nota > 0 & nota < 10){
+        if(nota >= 0 & nota <= 10){
             this.nota2 = nota;
             return true;
         }
@@ -39,7 +40,7 @@ public class Estudante{
     }
 
     public boolean setNota3(float nota){
-        if(nota > 0 & nota < 10){
+        if(nota >= 0 & nota <= 10){
             this.nota3 = nota;
             return true;
         }

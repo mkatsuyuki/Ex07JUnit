@@ -15,12 +15,12 @@ public class DisciplinaTest{
     boolean invalidaSaida = false;
     boolean resultado_aux;
 
-    Disciplina disciplinaGlobal = new Disciplina("Teste03", "SSC0620");
-    Estudante alunoAprovado1 = new Estudante(1000000, "Aprovado");
-    Estudante alunoAprovado2 = new Estudante(1000001, "Aprovado");
-    Estudante alunoAprovado3 = new Estudante(1000002, "Aprovado");
-    Estudante alunoReprovado1 = new Estudante(1000004, "Reprovado");
-    Estudante alunoReprovado2 = new Estudante(1000005, "Reprovado");
+    Disciplina disciplinaGlobal = Disciplina.newDisciplina("Teste03", "SSC0620");
+    Estudante alunoAprovado1 = Estudante.newEstudante(1000000, "Aprovado");
+    Estudante alunoAprovado2 = Estudante.newEstudante(1000001, "Aprovado");
+    Estudante alunoAprovado3 = Estudante.newEstudante(1000002, "Aprovado");
+    Estudante alunoReprovado1 = Estudante.newEstudante(1000004, "Reprovado");
+    Estudante alunoReprovado2 = Estudante.newEstudante(1000005, "Reprovado");
     /*
     public boolean verificaAddEstudante(Estudante newEstudante, Disciplina disciplina){
     }
@@ -32,24 +32,24 @@ public class DisciplinaTest{
         resultado_aux = true;
         
         
-        alunoAprovado1.setNota1(10);
+        alunoAprovado1.setNota1(10f);
         alunoAprovado1.setNota2(9.5f);
         alunoAprovado1.setNota3(7.8f);
 
         
-        alunoAprovado2.setNota1(4);
-        alunoAprovado2.setNota2(5);
-        alunoAprovado2.setNota3(6);
+        alunoAprovado2.setNota1(4f);
+        alunoAprovado2.setNota2(5f);
+        alunoAprovado2.setNota3(6f);
 
         
-        alunoAprovado3.setNota1(5);
-        alunoAprovado3.setNota2(5);
-        alunoAprovado3.setNota3(5);
+        alunoAprovado3.setNota1(5f);
+        alunoAprovado3.setNota2(5f);
+        alunoAprovado3.setNota3(5f);
 
         
-        alunoReprovado1.setNota1(2);
-        alunoReprovado1.setNota2(3);
-        alunoReprovado1.setNota3(2);
+        alunoReprovado1.setNota1(2f);
+        alunoReprovado1.setNota2(3f);
+        alunoReprovado1.setNota3(2f);
 
         
         alunoReprovado2.setNota1(4.1f);
@@ -68,10 +68,10 @@ public class DisciplinaTest{
     @Test
     public void casoTeste01(){
         //tenta criar disciplina com código invalido, estourando o limite de numeros
-        Disciplina disciplina_aux = new Disciplina("Teste01", "SSC123456789");
+        Disciplina disciplina_aux = Disciplina.newDisciplina("Teste01", "SSC123456789");
 
         //checagem
-        resultado_aux = disciplina_aux.verificaCodigoDisciplina();
+        if(disciplina_aux == null) resultado_aux = false;
 
         //validação da saida
         assertEquals(validaSaida, resultado_aux);
@@ -81,10 +81,11 @@ public class DisciplinaTest{
     @Test
     public void casoTeste02(){
         //tenta criar disciplina com codigo invalido, não começando com SSC
-        Disciplina disciplina_aux = new Disciplina("Teste02", "ABC4567");
+        Disciplina disciplina_aux = Disciplina.newDisciplina("Teste02", "ABC4567");
 
         //checagem
-        resultado_aux = disciplina_aux.verificaCodigoDisciplina();
+        if(disciplina_aux == null) resultado_aux = false;
+
         assertEquals(validaSaida, resultado_aux);
     }      
     
@@ -92,7 +93,7 @@ public class DisciplinaTest{
     @Test
     public void casoTeste03(){
         //tenta criar disciplina com codigo valido
-        Disciplina disciplina_aux = new Disciplina("Teste03", "SSC0620");
+        Disciplina disciplina_aux = Disciplina.newDisciplina("Teste03", "SSC0620");
         //checagem
         resultado_aux = disciplina_aux.verificaCodigoDisciplina();
         assertEquals(validaSaida,resultado_aux);

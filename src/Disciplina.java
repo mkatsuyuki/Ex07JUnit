@@ -12,12 +12,22 @@ public class Disciplina {
     private List<Estudante> listaAprovados;
     private List<Estudante> listaReprovados;
 
-    public Disciplina(String nomeDisciplina, String codigoDisciplina){
+    private Disciplina(String nomeDisciplina, String codigoDisciplina){
         this.nomeDisciplina = nomeDisciplina;
         this.codigoDisciplina = codigoDisciplina;
         this.listaEstudantes = new ArrayList<Estudante>();
         this.listaAprovados = new ArrayList<Estudante>();
         this.listaReprovados = new ArrayList<Estudante>();
+    }
+
+    public static Disciplina newDisciplina(String nomeDisciplina, String codigoDisciplina){
+
+        if(verificaCodigoDisciplina(codigoDisciplina))
+            return new Disciplina(nomeDisciplina, codigoDisciplina);
+        
+        System.out.println("Codigo de disciplina invalido: " + codigoDisciplina);
+        return null;
+
     }
 
     public void addEstudante(Estudante newEstudante){
@@ -188,9 +198,25 @@ public class Disciplina {
         for (Estudante a: this.listaEstudantes) {
             System.out.println(a.getNome() + ", " + a.getNumero() + ", Média: " + a.getMedia());
         }
+    
     }
-    public boolean verificaCodigoDisciplina(){
+
+
+    public static boolean verificaCodigoDisciplina(String codigoDisciplina){
         if(codigoDisciplina.length() == 7){
+                String tresPrimeirosCaracteres = codigoDisciplina.substring(0, 3);
+                if(tresPrimeirosCaracteres.equals("SSC")){
+                    return true;
+                }else{
+                    return false;
+                }
+        }else{
+            return false;
+        }
+    }
+
+    public boolean verificaCodigoDisciplina(){
+        if(this.codigoDisciplina.length() == 7){
                 String tresPrimeirosCaracteres = codigoDisciplina.substring(0, 3);
                 if(tresPrimeirosCaracteres.equals("SSC")){
                     return true;

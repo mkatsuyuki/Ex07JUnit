@@ -1,58 +1,66 @@
 public class Main {
     public static void main(String[] args) throws Exception {
-        Disciplina orgcomp = new Disciplina("SSC0001", "OrgComp");
 
-        Estudante aluno1 = newEstudante(10101010, "Aluno 1");
-        Estudante aluno2 = newEstudante(10101011, "Aluno 2");
-        Estudante aluno3 = newEstudante(10101012, "Aluno 3");
-        Estudante aluno4 = newEstudante(10101013, "Aluno 4");
-        Estudante aluno5 = newEstudante(10101014, "Aluno 5");
-        /*
-        Estudante[] alunos = new Estudante[] {aluno1, aluno2, aluno3};
-        orgcomp.addEstudantes(Arrays.asList(alunos));
-        */
-        aluno1.setNota1(10);
-        aluno1.setNota2(9.5f);
-        aluno1.setNota3(7.8f);
+        Disciplina orgcomp = Disciplina.newDisciplina("OrgComp", "SSC0001");
+
+        Estudante aluno1 = Estudante.newEstudante(10101010, "Aluno 1");
+        Estudante aluno2 = Estudante.newEstudante(10101011, "Aluno 2");
+        Estudante aluno3 = Estudante.newEstudante(10101012, "Aluno 3");
+        Estudante aluno4 = Estudante.newEstudante(10101013, "Aluno 4");
+        Estudante aluno5 = Estudante.newEstudante(10101014, "Aluno 5");
+
+        if(aluno1 != null){
+            aluno1.setNota1(10);
+            aluno1.setNota2(9.5f);
+            aluno1.setNota3(7.8f);
+            orgcomp.addEstudante(aluno1);
+        }
         
-        aluno2.setNota1(4);
-        aluno2.setNota2(5);
-        aluno2.setNota3(4);
+        if(aluno2 != null){
+            aluno2.setNota1(4);
+            aluno2.setNota2(5);
+            aluno2.setNota3(4);
+            orgcomp.addEstudante(aluno2);
+        }
         
-        aluno3.setNota1(5);
-        aluno3.setNota2(5);
-        aluno3.setNota3(5);
+        if(aluno3 != null){
+            aluno3.setNota1(5);
+            aluno3.setNota2(5);
+            aluno3.setNota3(5);
+            orgcomp.addEstudante(aluno3);
+        }
         
-        aluno4.setNota1(2);
-        aluno4.setNota2(3);
-        aluno4.setNota3(2);
+        if(aluno4 != null){
+            aluno4.setNota1(2);
+            aluno4.setNota2(3);
+            aluno4.setNota3(2);
+            orgcomp.addEstudante(aluno4);
+        }
     
-        aluno5.setNota1(4.1f);
-        aluno5.setNota2(5.3f);
-        aluno5.setNota3(3.9f);
+        if(aluno5 != null){
+            aluno5.setNota1(4.1f);
+            aluno5.setNota2(5.3f);
+            aluno5.setNota3(3.9f);
+            orgcomp.addEstudante(aluno5);
+        }
 
-        orgcomp.addEstudante(aluno1);
-        orgcomp.addEstudante(aluno2);
-        orgcomp.addEstudante(aluno3);
-        orgcomp.addEstudante(aluno4);
-        orgcomp.addEstudante(aluno5);
 
-        System.out.println("Estudantes:");
-        orgcomp.printEstudantes();
-        System.out.println("Aprovados:");
-        orgcomp.printAprovados();
-        System.out.println("Reprovados:");
-        orgcomp.printReprovados();
+        if(orgcomp != null){
+            System.out.println("Estudantes:");
+            orgcomp.printEstudantes();
+            System.out.println("Aprovados:");
+            orgcomp.printAprovados();
+            System.out.println("Reprovados:");
+            orgcomp.printReprovados();
 
-        orgcomp.avaliarMedias();
-        System.out.println("Aprovados:");
-        orgcomp.printAprovados();
-        System.out.println("Reprovados:");
-        orgcomp.printReprovados();
-        
-        System.out.println("");
-        System.out.println("Num aprovados: " + orgcomp.quantidadeAprovados());
-
-        System.out.println("Media aluno 1: " + orgcomp.getMediaEstudante(aluno1.getNumero()));
+            orgcomp.avaliarMedias();
+            System.out.println("Aprovados:");
+            orgcomp.printAprovados();
+            System.out.println("Reprovados:");
+            orgcomp.printReprovados();
+            
+            System.out.println("");
+            System.out.println("Num aprovados: " + orgcomp.quantidadeAprovados());
+        }
     }
 }
