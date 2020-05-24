@@ -20,12 +20,6 @@ public class Disciplina {
         this.listaReprovados = new ArrayList<Estudante>();
     }
 
-    /*
-    public void addEstudantes(List<Estudante> listaEstudantes){
-        this.listaEstudantes.addAll(listaEstudantes);
-    }
-    */
-
     public void addEstudante(Estudante newEstudante){
         this.listaEstudantes.add(newEstudante);
     }

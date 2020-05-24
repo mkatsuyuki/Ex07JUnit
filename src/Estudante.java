@@ -7,13 +7,16 @@ public class Estudante{
     private float nota2;
     private float nota3;
 
-    public Estudante(int nUSP, String nome){
-
-        if(nUSP > 9999999){
-            //throw new IllegalArgumentException("nUSP deve ter no maximo 7 digitos, porem foi encontrado: "+ nUSP);
-        }
+    private Estudante(int nUSP, String nome){
         this.nome = nome;
         this.nUSP = nUSP;
+    }
+
+    public static Estudante newEstudante(int nUSP, String nome) /* throws SomeException -- if you want */ {
+        if (nUSP > 99999999) {
+           return null; // or throw an Exception - it is how you want   
+        }
+        return new Estudante(nUSP, nome);
     }
 
     public boolean setNota1(float nota){

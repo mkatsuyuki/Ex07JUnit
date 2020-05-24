@@ -1,7 +1,5 @@
 import org.junit.Test;
 
-//import jdk.jshell.VarSnippet;
-
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
@@ -10,7 +8,6 @@ import org.junit.Before;
 
 public class EstudanteTest{
     //variáveis globais da classe de teste
-    Estudante estudante1;           //Classe desejada para ser testada
     Estudante estudanteNUSP_01;           //Classe desejada para ser testada
     Estudante estudanteNUSP_02;           //Classe desejada para ser testada
     Estudante estudanteNUSP_03;           //Classe desejada para ser testada
@@ -28,7 +25,6 @@ public class EstudanteTest{
         estudanteNUSP_01 = new Estudante(10277040, "Teste01");          
         estudanteNUSP_02 = new Estudante(123456789, "Teste02");          
         estudanteNUSP_03 = new Estudante(1234, "Teste03"); 
-        estudante1 = new Estudante(10277040, "Paulo");
         estudanteNOTAS = new Estudante(1000001, "Miguel");
     }
 
@@ -88,6 +84,6 @@ public class EstudanteTest{
     // Teste se retorna o nUSP correto
     @Test
     public void casoTeste7 (){
-        assertEquals(10277040, estudante1.getNumero());
+        assertEquals(10277040, estudanteNUSP_01.getNumero());
     }
 }
