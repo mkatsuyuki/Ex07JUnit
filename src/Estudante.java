@@ -13,7 +13,7 @@ public class Estudante{
     }
 
     public static Estudante newEstudante(int nUSP, String nome) /* throws SomeException -- if you want */ {
-        if (nUSP > 99999999) {
+        if (nUSP > 9999999) {
             System.out.println("nUSP invalido: " + nUSP);
             return null; // or throw an Exception - it is how you want   
         }

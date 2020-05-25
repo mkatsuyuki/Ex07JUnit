@@ -1,5 +1,3 @@
-//import sun.security.util.Length;
-
 public class Estudante{
     private String nome;
     private int nUSP;
@@ -8,44 +6,24 @@ public class Estudante{
     private float nota3;
 
     public Estudante(int nUSP, String nome){
-
-        if(nUSP > 9999999){
-            //throw new IllegalArgumentException("nUSP deve ter no maximo 7 digitos, porem foi encontrado: "+ nUSP);
-        }
         this.nome = nome;
         this.nUSP = nUSP;
     }
 
-    public boolean setNota1(float nota){
-        if(nota > 0 & nota < 10){
-            this.nota1 = nota;
-            return true;
-        }
-
-        return false;
-        
+    public void setNota1(float nota){
+        this.nota1 = nota;
     }
 
-    public boolean setNota2(float nota){
-        if(nota > 0 & nota < 10){
-            this.nota2 = nota;
-            return true;
-        }
-
-        return false;
+    public void setNota2(float nota){
+        this.nota2 = nota;
     }
 
-    public boolean setNota3(float nota){
-        if(nota > 0 & nota < 10){
-            this.nota3 = nota;
-            return true;
-        }
-
-        return false;
+    public void setNota3(float nota){
+        this.nota3 = nota;
     }
 
     public int getNumero(){
-        return this.nUSP;
+        return nUSP;
     }
 
     public float getMedia(){
